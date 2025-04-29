@@ -27,6 +27,7 @@ public class Tiger extends Animal{
 
     @Override
     public void move() {
+        super.move();
         System.out.println("네 발로 걷습니다.");
         //super는 부모 클래스의 객체를 의미함
         //위 코드는 부모 클래스인 Animal 클래스의 move()매서드를 호출한다는 의미로 볼 수 있음
