@@ -18,12 +18,18 @@ public class CentralControl {
             return;
         }
         deviceArray[emptyIndex] = device;
-        System.out.println(device.getClass().getSimpleName() + "를 " + emptyIndex + "번째 장치에 연결하였습니다.");
+        System.out.println(device.getClass().getSimpleName() + "를 " + (emptyIndex+1) + "번째 장치에 연결하였습니다.");
         //getClass() -> 패키지 명을 포함한 클래스명이 반환됨
         //getSimpleName() -> 패키지 명도 날아가고 클래스명이 반환됨
         //매서드 에서 매서드를 호출 -> 매서드 체이닝
     }
 
+    public void deleteDevice(int indexNum) {
+        if (deviceArray[indexNum-1] != null) {
+            System.out.println(indexNum + "번째 슬롯의 " + deviceArray[indexNum-1].getClass().getSimpleName() + " 디바이스를 제거했습니다.");
+            deviceArray[indexNum-1] = null;
+        }
+    }
     private int checkEmpty() {
         for(int i=0; i<deviceArray.length; i++) {
             if(deviceArray[i] == null) {
@@ -51,6 +57,30 @@ public class CentralControl {
                 continue;
             }
             deviceArray[i].off();
+        }
+    }
+
+    public void performSpecificMethod() {
+        for(Power device : deviceArray) {
+            if(device instanceof Computer) {
+                Computer computer = (Computer) device;
+                computer.compute();
+            } else if (device instanceof Mouse) {
+                Mouse mouse = (Mouse) device;
+                mouse.leftClick();
+            } else if (device instanceof LED) {
+                LED led = (LED) device;
+                led.changeColor();
+            } else if (device instanceof Tv) {
+                Tv tv = (Tv) device;
+                tv.channelUp();
+            } else if (device instanceof Speaker) {
+                Speaker speaker = (Speaker) device;
+                speaker.changeEqual();
+            } else if (device instanceof SmartPhone) {
+                SmartPhone smartPhone = (SmartPhone) device;
+                smartPhone.touchScreen();
+            }
         }
     }
 }

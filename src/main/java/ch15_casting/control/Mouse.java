@@ -11,7 +11,7 @@ public class Mouse implements Power{
         System.out.println("마우스를 끕니다");
     }
 
-    public void move() {
-        System.out.println("마우스가 움직입니다.");
+    public void leftClick() {
+        System.out.println("왼쪽 버튼을 클릭합니다.");
     }
 }

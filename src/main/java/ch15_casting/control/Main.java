@@ -5,6 +5,9 @@ public class Main {
         LED led1 = new LED();
         Mouse mouse1 = new Mouse();
         Computer computer1 = new Computer();
+        SmartPhone smartPhone1 = new SmartPhone();
+        Speaker speaker1 = new Speaker();
+        Tv tv1 = new Tv();
         CentralControl control = new CentralControl(new Power[5]);
         // CentralControl control = new CentralControl({led1, mouse1, computer1});
         // 생성자의 argument로 빈 배열을 집어넣는 것은 가능하지만 곧장 집어넣는데는 실패
@@ -20,8 +23,11 @@ public class Main {
         control.addDevice(computer1);
         control.addDevice(mouse1);
         control.addDevice(led1);
+        control.addDevice(smartPhone1);
+        control.addDevice(speaker1);
+        control.addDevice(tv1);
         control.powerOn();
         control.powerOff();
-
+        control.performSpecificMethod();
     }
 }

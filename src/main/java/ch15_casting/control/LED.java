@@ -11,7 +11,7 @@ public class LED implements Power{
         System.out.println("화면을 끕니다.");
     }
 
-    public void bright() {
-        System.out.println("LED가 빛납니다.");
+    public void changeColor() {
+        System.out.println("조명 색깔을 변경합니다.");
     }
 }
