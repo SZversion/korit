@@ -7,5 +7,7 @@ public class PersonMain {
                 .age(21)
                 .address("종로구")
                 .build();
+
+        System.out.println(person1);
     }
 }

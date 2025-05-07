@@ -1,5 +1,9 @@
 package ch18_static.builders;
 
+import lombok.Builder;
+import lombok.ToString;
+
+@ToString
 public class Person {
     private String name;
     private int age;
